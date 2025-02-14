@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  kg-graph-o-matic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kg-graph-o-matic
+    ports:
+      - "80:80"
+    volumes:
+      - type: bind
+        source: ./app.py
+        target: /app.py
